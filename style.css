@@ -3,6 +3,7 @@
 body {
   font-family: "Lato", sans-serif;
   color: #6b1a22;
+  margin: 0;
 }
 
 h2 {
@@ -32,7 +33,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -40,6 +41,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .item {
@@ -49,6 +51,7 @@ main img {
 
 .item-double {
   flex: 2;
+  margin: 10px;
 }
 
 /* -------  Navigation ------- */
@@ -57,6 +60,7 @@ header {
   background-color: #83092e;
   padding: 20px 20px 0 20px;
   text-align: center;
+  margin: 0;
 }
 
 .logo {
@@ -65,25 +69,42 @@ header {
   color: #ecdbc9;
 }
 
-header nav ul li {
-  list-style-type: none;
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
 }
 
 header nav ul li a {
   color: #ecdbc9;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
 }
 
-header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
+header nav ul li:last-child a {
+  margin-right: 0;
 }
 
 /* -------  Join Form ------- */
 form {
   border: 2px solid #6b1a22;
   padding: 10px;
+}
+form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
 }
 
 form label {
@@ -118,3 +139,32 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 600px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  .logo {
+    font-size: 42px;
+    margin: 14px 0;
+    padding-top: 0;
+  }
+
+  header nav ul li a:hover {
+    color: #bdbdbd;
+    text-decoration: none;
+  }
+
+  form fieldset {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
